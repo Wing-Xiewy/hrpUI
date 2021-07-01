@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置IE渲染方式默认为最高 除IE6： -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <!-- 兼容移动设备的展示效果： -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 若页面需默认用极速核，增加标签： -->
+    <meta name="renderer" content="webkit">
+
+    <title>HRP UI Demo</title>
+
+    <!-- 引入CSS -->
+    <link href="css/hrp.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+
+    <!-- jQuery (necessary for JavaScript plugins) -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <!-- hrp js -->
+    <script src="js/hrp.js"></script>
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- WARNING: Respond.js 不能通过 file:// 协议访问 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="hrp-row">
+
+        <div class="hrp-col demo-menu" style="position: relative;">
+            <p>&nbsp;</p>
+            <ul class="hrp-menu hrp-menu-vertical demo-menu"
+                style="position: fixed; top: 0; bottom: 0; overflow-y: auto;">
+                <div class="hrp-menu-item-group-title">基础</div>
+                <ul>
+                    <a class="hrp-menu-item" href="#color"><i class="iconhrp icon-bg-colors"></i>Color
+                        <span>颜色</span></a>
+                    <a class="hrp-menu-item" href="#font"><i class="iconhrp icon-edit"></i>Font <span>字体</span></a>
+                    <a class="hrp-menu-item" href="#button"><i class="iconhrp icon-Youtube"></i>Button
+                        <span>按钮</span></a>
+                    <a class="hrp-menu-item" href="#icon"><i class="iconhrp icon-heart"></i>Icon <span>图标</span></a>
+                </ul>
+                <div class="hrp-menu-item-group-title">布局</div>
+                <ul>
+                    <a class="hrp-menu-item" href="#grid"><i class="iconhrp icon-table1"></i>Grid <span>栅格</span></a>
+                    <a class="hrp-menu-item" href="#card"><i class="iconhrp icon-creditcard"></i>Card
+                        <span>卡片</span></a>
+                </ul>
+                <div class="hrp-menu-item-group-title">导航</div>
+                <ul>
+                    <a class="hrp-menu-item" href="#menu"><i class="iconhrp icon-menu"></i>Menu <span>导航菜单</span></a>
+                    <a class="hrp-menu-item" href="#tabs"><i class="iconhrp icon-dash"></i>Tabs <span>标签页</span></a>
+                    <a class="hrp-menu-item" href="#page"><i class="iconhrp icon-read"></i>Page <span>分页</span></a>
+                </ul>
+                <div class="hrp-menu-item-group-title">表单</div>
+                <ul>
+                    <a class="hrp-menu-item" href="#input"><i class="iconhrp icon-edit-square"></i>Input
+                        <span>输入框</span></a>
+                    <a class="hrp-menu-item" href="#radio"><i class="iconhrp icon-check-circle"></i>Radio
+                        <span>单选框</span></a>
+                    <a class="hrp-menu-item" href="#switch"><i class="iconhrp icon-control"></i>Switch
+                        <span>开关</span></a>
+                    <a class="hrp-menu-item" href="#checkbox"><i class="iconhrp icon-check-square"></i>Checkbox
+                        <span>多选框</span></a>
+                    <a class="hrp-menu-item" href="#select"><i class="iconhrp icon-down-square"></i>Select
+                        <span>选择器</span></a>
+                    <a class="hrp-menu-item" href="#autocomplete"><i class="iconhrp icon-edit"></i>Autocomplete
+                        <span>检索框</span></a>
+                    <a class="hrp-menu-item" href="#datePicker"><i class="iconhrp icon-calendar"></i>DatePicker
+                        <span>日期选择器</span></a>
+                    <a class="hrp-menu-item" href="#form"><i class="iconhrp icon-detail"></i>Form <span>表单</span></a>
+                    <a class="hrp-menu-item" href="#table"><i class="iconhrp icon-table"></i>Table <span>表格</span></a>
+                </ul>
+                <div class="hrp-menu-item-group-title">视图</div>
+                <ul>
+                    <a class="hrp-menu-item" href="#message"><i class="iconhrp icon-info-circle"></i>Message
+                        <span>全局提示</span></a>
+                    <a class="hrp-menu-item" href="#modal"><i class="iconhrp icon-Batchfolding"></i>Modal
+                        <span>模态</span></a>
+                    <a class="hrp-menu-item" href="#drawer"><i class="iconhrp icon-database"></i>Drawer
+                        <span>抽屉</span></a>
+                    <a class="hrp-menu-item" href="#tree"><i class="iconhrp icon-apartment"></i>Tree
+                        <span>树形控件</span></a>
+                    <a class="hrp-menu-item" href="#tooltip"><i class="iconhrp icon-pic-center"></i>Tooltip
+                        <span>文字提示</span></a>
+                    <a class="hrp-menu-item" href="#scrollbar"><i class="iconhrp icon-sliders"></i>Scrollbar
+                        <span>滚动条</span></a>
+                    <a class="hrp-menu-item" href="#mask"><i class="iconhrp icon-border"></i>Mask
+                        <span>遮罩层</span></a>
+                </ul>
+
+            </ul>
+
+        </div>
+
+        <div class="hrp-col demo-content">
+            <!-- <div class="test" style="width: 2000px;height: 200px;background: #000"></div> -->
+            <div class="container">
+                <p>一些全局属性：默认字体大小<code>14px</code>，字体颜色<code>#535353</code>，行高<code>1.5</code>，盒模型<code>border-box</code>。
+                </p>
+
+                <!-- color -->
+                <h1 id="color">颜色 <small>Color</small> </h1>
+                <p>使用翠蓝色作为主色调，其中<code class="d">Light Primary</code>用于<code>:hover</code>，<code
+                        class="d">Dark Primary</code>用于<code>:active</code>。</p>
+                <div class="sample color-demo">
+                    <div class="hrp-row spacing">
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(30,151,173);">
+                                <div class="w">Primary</div>
+                                <div class="w disabled">#1e97ad</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(32,165,189);">
+                                <div class="w">Light Primary</div>
+                                <div class="w disabled">#20a5bd</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(27,138,158);">
+                                <div class="w">Dark Primary</div>
+                                <div class="w disabled">#1b8a9e</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(20,181,165);">
+                                <div class="w">Success</div>
+                                <div class="w disabled">#14b5a5</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(235,178,47);">
+                                <div class="w">Warning</div>
+                                <div class="w disabled">#ebb22f</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(229,83,102);">
+                                <div class="w">Error</div>
+                                <div class="w disabled">#e55366</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hrp-row spacing">
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(66,66,66);">
+                                <div class="w">标题 Title</div>
+                                <div class="w disabled">#424242</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(83,83,83);">
+                                <div class="w">正文 Content</div>
+                                <div class="w disabled">#535353</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(152,152,152);">
+                                <div class="w">辅助/图标 Icon</div>
+                                <div class="w disabled">#989898</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(220,220,220);">
+                                <div>边框 Border</div>
+                                <div class=" disabled">#dcdcdc</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(236,236,236);">
+                                <div>分割线 Divider</div>
+                                <div class=" disabled">#ececec</div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card" style="background-color: rgb(247,247,247);">
+                                <div>背景 Background</div>
+                                <div class=" disabled">#f7f7f7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- font -->
+                <h1 id="font">字体 <small>Font</small> </h1>
+                <p>默认字体代码<code class="o">font-family</code>:
+                    <code>Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif</code>;
+                </p>
+                <div class="sample">
+                    <table class="hrp-table">
+                        <thead>
+                            <tr>
+                                <th>字体</th>
+                                <th>实例</th>
+                                <th>粗细</th>
+                                <th>颜色</th>
+                                <th>字号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>主标题</td>
+                                <td style="font-size: 18px; font-weight: bold; color: #424242;">我是标题</td>
+                                <td>加粗</td>
+                                <td>#424242</td>
+                                <td>18px</td>
+                            </tr>
+                            <tr>
+                                <td>次级标题</td>
+                                <td style="font-size: 16px; font-weight: bold; color: #424242;">我是标题</td>
+                                <td>加粗</td>
+                                <td>#424242</td>
+                                <td>16px</td>
+                            </tr>
+                            <tr>
+                                <td>小标题</td>
+                                <td style="font-size: 14px; font-weight: bold; color: #424242;">我是标题</td>
+                                <td>加粗</td>
+                                <td>#424242</td>
+                                <td>14px</td>
+                            </tr>
+                            <tr>
+                                <td>正文</td>
+                                <td style="font-size: 14px; color: #535353;">我是正文</td>
+                                <td>默认</td>
+                                <td>#535353</td>
+                                <td>14px</td>
+                            </tr>
+                            <tr>
+                                <td>辅助文字</td>
+                                <td style="font-size: 14px; color: #989898;">我是辅助文字</td>
+                                <td>默认</td>
+                                <td>#989898</td>
+                                <td>14px</td>
+                            </tr>
+                            <tr>
+                                <td>失效文字</td>
+                                <td style="font-size: 14px; color: #b3b3b3;">我是失效文字</td>
+                                <td>默认</td>
+                                <td>#b3b3b3</td>
+                                <td>14px</td>
+                            </tr>
+                            <tr>
+                                <td>链接文字</td>
+                                <td style="font-size: 14px; color: #1e97ad;">我是链接文字</td>
+                                <td>默认</td>
+                                <td>#1e97ad</td>
+                                <td>14px</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <!-- btn -->
+                <h1 id="button">按钮 <small>Button</small> </h1>
+                <p>基础组件，触发业务逻辑时使用。</p>
+                <div class="sample">
+                    <button type="button" class="hrp-btn hrp-btn-default">
+                        Default</button>
+                    <a type="button" class="hrp-btn hrp-btn-primary">
+                        Primary</a>
+                    <button type="button" class="hrp-btn hrp-btn-info">
+                        Info</button>
+                    <button type="button" class="hrp-btn hrp-btn-success">
+                        Success</button>
+                    <button type="button" class="hrp-btn hrp-btn-warning">
+                        Warning</button>
+                    <button type="button" class="hrp-btn hrp-btn-error">
+                        Error</button>
+                    <button type="button" class="hrp-btn hrp-btn-link">Text/Link</button>
+                    <samp>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code>&gt;<code class="d">
+                    Default</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-primary"</code>&gt;
+                        <code class="d">Primary</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-info"</code>&gt;<code class="d">
+                    Info</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-success"</code>&gt;
+                        <code class="d">Success</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-warning"</code>&gt;
+                        <code class="d">Warning</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-error"</code>&gt;
+                        <code class="d">Error</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-link"</code>&gt;
+                        <code class="d">Text/Link</code>&lt;/button&gt;
+                    </samp>
+                </div>
+                <p>通过添加<code class="r">.disabled</code>或<code class="g">disabled</code>属性将按钮设置为不可用状态。</p>
+                <div class="sample">
+                    <button type="button" class="hrp-btn hrp-btn-default disabled">
+                        Default</button>
+                    <button type="button" class="hrp-btn hrp-btn-primary" disabled>
+                        Primary</button>
+                    <a class="hrp-btn hrp-btn-link" disabled>Text/Link</a>
+                    <samp>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default disabled"</code>&gt;<code
+                            class="d">
+                    Default</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-primary"</code><code
+                            class="g">disabled</code>&gt;
+                        <code class="d">Primary</code>&lt;/button&gt;<br>
+                        &lt;a <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-link"</code><code
+                            class="g">disabled</code>&gt;
+                        <code class="d">Text/Link</code>&lt;/a&gt;
+                    </samp>
+                </div>
+                <p>在<code>&lt;button&gt;</code>内使用<code class="d">icon</code>。</p>
+                <div class="sample">
+                    <button type="button" class="hrp-btn hrp-btn-primary">
+                        <i class="iconhrp icon-search"></i>
+                        <span>查询</span>
+                    </button>
+                    <button type="button" class="hrp-btn hrp-btn-error">
+                        <i class="iconhrp icon-delete"></i>
+                        <span>Delete</span>
+                    </button>
+                    <samp>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-primary"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code
+                            class="r">"iconhrp icon-search"</code>&gt;&lt;/i&gt;&lt;span&gt;<code
+                            class="d">查询</code>&lt;/span&gt;&lt;/button&gt; <br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-error"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code
+                            class="r">"iconhrp icon-delete"</code>&gt;&lt;/i&gt;&lt;span&gt;<code class="d">
+                    Delete</code>&lt;/span&gt;&lt;/button&gt;
+                    </samp>
+                </div>
+                <p>通过添加<code class="r">.large</code>将按钮设置为大尺寸。</p>
+                <div class="sample">
+                    <button type="button" class="hrp-btn hrp-btn-primary large">确定</button>
+                    <samp>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-primary large"</code>&gt;<code class="d">确定</code>&lt;/button&gt;
+                    </samp>
+                </div>
+
+
+                <!-- icon -->
+                <h1 id="icon">图标 <small>Icon</small> </h1>
+                <p>默认使用 Iconfont 自定义图标，可以引入其他字体文件。 <br>第一步：引入项目下面的 fontclass 代码 <code
+                        class="b">&lt;link rel="stylesheet" href="./iconfont.css"&gt;</code>。 <br>
+                    第二步：使用 class 来定义图标，<code class="b">&lt;i class="iconhrp icon-xxx"&gt;&lt;/i&gt;</code>。</p>
+                <div class="sample">
+                    <iframe src="font_demo.html" frameborder="0" width="100%" height="500px"
+                        style="border: 1px solid #ececec; border-radius: 4px; padding: 15px;"></iframe>
+                </div>
+
+
+                <!-- grid -->
+                <h1 id="grid">栅格 <small>Grid</small> </h1>
+                <p>栅格系统将区域进行24等分，使用<code>row</code>在水平方向创建一行；将一组<code>col</code>插入在<code>row</code>中；在每个<code>col</code>中，插入自己的内容。
+                </p>
+                <p>通过设置<code>col</code>的参数，指定跨越的范围，范围是<code class="d">1</code>到<code
+                        class="d">24</code>；每个<code>row</code>中的<code>col</code>总和应该为<code class="d">24</code>。</p>
+                <div class="sample grid-demo">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                        <div class="hrp-col hrp-col-1">
+                            <div class="demo-card">col-1</div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-row"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-col hrp-col-1"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"demo"</code>&gt;<code class="d">col-1</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; …… <br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+                <p>给<code>row</code>添加<code class="r">.spacing</code>，可以给下属的<code>col</code>添加间距。</p>
+                <div class="sample grid-demo">
+                    <div class="hrp-row spacing">
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card">col-4</div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card">col-4</div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card">col-4</div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card">col-4</div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card">col-4</div>
+                        </div>
+                        <div class="hrp-col hrp-col-4">
+                            <div class="demo-card">col-4</div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-row spacing"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-col hrp-col-4"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"demo"</code>&gt;<code class="d">col-4</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; …… <br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+
+                <!-- card -->
+                <h1 id="card">卡片 <small>Card</small> </h1>
+                <p>基础容器，用来显示文字、列表、图文等内容，也可以配合其它组件一起使用。</p>
+                <div class="sample">
+                    <div class="hrp-row spacing">
+                        <div class="hrp-col hrp-col-10">
+                            <div class="hrp-card">
+                                <div class="hrp-card-head">
+                                    <p><i class="iconhrp icon-detail"></i>Classic film</p>
+                                </div>
+                                <div class="hrp-card-extra">
+                                    <a href="JavaScript:;">Change</a>
+                                </div>
+                                <div class="hrp-card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="JavaScript:;"><i class="hrp-sign"></i>Schindler's List</a>
+                                            <span>10-12</span>
+                                        </li>
+                                        <li>
+                                            <a href="JavaScript:;"><i class="hrp-sign"></i>Farewell to My Concubine</a>
+                                            <span>10-12</span>
+                                        </li>
+                                        <li>
+                                            <a href="JavaScript:;"><i class="hrp-sign"></i>The Shawshank Redemption</a>
+                                            <span>12-21</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hrp-col hrp-col-10">
+                            <div class="hrp-card">
+                                <div class="hrp-card-head">
+                                    <p>
+                                        标题部分
+                                    </p>
+                                </div>
+                                <div class="hrp-card-body">
+                                    <p>
+                                        主体部分用来显示文字、列表、图文等内容。
+                                        自定义标题、额外操作和主体内容。
+                                        可以结合其它组件使用。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-card"</code>&gt;<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 标题部分 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-card-head"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;p&gt;&lt;i <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-detail"</code>&gt;&lt;/i&gt;<code
+                            class="d">classic film</code>&lt;/p&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 额外操作部分 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-card-extra"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;a href="JavaScript:;"&gt;<code
+                            class="d">Change</code>&lt;/a&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 主体部分 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-card-body"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;a&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"hrp-sign"</code>&gt;&lt;/i&gt;<code
+                            class="d">The Shawshank Redemption</code>&lt;/a&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;span&gt;<code
+                            class="d">10-12</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; …… <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                </div>
+
+
+                <!-- menu -->
+                <h1 id="menu">菜单 <small>Menu</small> </h1>
+                <p>侧栏导航<code class="r">.hrp-menu .hrp-mneu-vertical</code>，无边距无边框。 <br>通过添加<code
+                        class="r">.hrp-menu-dark</code>设置深色主题。<br>一级目录<code
+                        class="r">.hrp-menu-submen</code>可以内嵌<code class="r">.hrp-menu</code>子菜单，开启手风琴模式。<br>次级目录<code
+                        class="r">.hrp-menu-item</code>具有点选样式。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8">
+                            <ul class="hrp-menu hrp-menu-vertical">
+                                <li class="hrp-menu-submenu opened">
+                                    <div class="hrp-menu-submenu-title">
+                                        <i class="iconhrp icon-tags-fill"></i>
+                                        <a>MenuSubmenuTitle One</a>
+                                        <i class="iconhrp icon-down hrp-menu-submenu-title-arrow"></i>
+                                    </div>
+                                    <ul class="hrp-menu">
+                                        <div class="hrp-menu-item-group-title">MenuItemGroupTitle</div>
+                                        <li class="hrp-menu-item"><a>MenuItem 1</a></li>
+                                        <li class="hrp-menu-item">MenuItem 2</li>
+                                    </ul>
+                                </li>
+                                <li class="hrp-menu-submenu">
+                                    <div class="hrp-menu-submenu-title">
+                                        <i class="iconhrp icon-tags-fill"></i>
+                                        MenuSubmenuTitle Two
+                                        <i class="iconhrp icon-down hrp-menu-submenu-title-arrow"></i>
+                                    </div>
+                                    <ul class="hrp-menu">
+                                        <li class="hrp-menu-item">MenuItem 3</li>
+                                        <li class="hrp-menu-submenu">
+                                            <div class="hrp-menu-submenu-title">
+                                                Submenu
+                                                <i class="iconhrp icon-down hrp-menu-submenu-title-arrow"></i>
+                                            </div>
+                                            <ul class="hrp-menu">
+                                                <li class="hrp-menu-item">MenuItem 4</li>
+                                                <li class="hrp-menu-item">MenuItem 5</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hrp-menu-submenu">
+                                    <div class="hrp-menu-submenu-title">
+                                        <i class="iconhrp icon-tags-fill"></i>
+                                        MenuSubmenuTitle Three
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="hrp-col hrp-col-1">&nbsp;</div>
+                        <div class="hrp-col hrp-col-8">
+                            <ul class="hrp-menu hrp-menu-vertical hrp-menu-dark">
+                                <li class="hrp-menu-submenu opened">
+                                    <div class="hrp-menu-submenu-title">
+                                        <i class="iconhrp icon-tags-fill"></i>
+                                        <a>MenuSubmenuTitle One</a>
+                                        <i class="iconhrp icon-down hrp-menu-submenu-title-arrow"></i>
+                                    </div>
+                                    <ul class="hrp-menu">
+                                        <div class="hrp-menu-item-group-title">MenuItemGroupTitle</div>
+                                        <li class="hrp-menu-item"><a>MenuItem 1</a></li>
+                                        <li class="hrp-menu-item">MenuItem 2</li>
+                                    </ul>
+                                </li>
+                                <li class="hrp-menu-submenu">
+                                    <div class="hrp-menu-submenu-title">
+                                        <i class="iconhrp icon-tags-fill"></i>
+                                        MenuSubmenuTitle Two
+                                        <i class="iconhrp icon-down hrp-menu-submenu-title-arrow"></i>
+                                    </div>
+                                    <ul class="hrp-menu">
+                                        <li class="hrp-menu-item">MenuItem 3</li>
+                                        <li class="hrp-menu-submenu">
+                                            <div class="hrp-menu-submenu-title">
+                                                Submenu
+                                                <i class="iconhrp icon-down hrp-menu-submenu-title-arrow"></i>
+                                            </div>
+                                            <ul class="hrp-menu">
+                                                <li class="hrp-menu-item">MenuItem 4</li>
+                                                <li class="hrp-menu-item">MenuItem 5</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hrp-menu-submenu">
+                                    <div class="hrp-menu-submenu-title">
+                                        <i class="iconhrp icon-tags-fill"></i>
+                                        MenuSubmenuTitle Three
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;ul <code class="b">class</code>=<code class="r">"hrp-menu hrp-menu-vertical"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu-title"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-tags-fill"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">MenuSubmenuTitle One</code> <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-down hrp-menu-submenu-title-arrow"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<code
+                            class="r">"hrp-menu"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-menu-item-group-title"</code>&gt;<code
+                            class="d">MenuItemGroupTitle</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-item"</code>&gt;<code class="d">MenuItem 1</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-item"</code>&gt;<code class="d">MenuItem 2</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu-title"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>="iconhrp
+                        icon-tags-fill"&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">MenuSubmenuTitle Two</code> <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-down hrp-menu-submenu-title-arrow"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code class="b">class</code>="hrp-menu"&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-item"</code>&gt;<code class="d">MenuItem 3</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu-title"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">Submenu</code>
+                        <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code
+                            class="b">class</code>=<code
+                            class="r">"iconhrp icon-down hrp-menu-submenu-title-arrow"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<code
+                            class="r">"hrp-menu"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code
+                            class="b">class</code>=<code class="r">"hrp-menu-item"</code>&gt;<code
+                            class="d">MenuItem 4</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code
+                            class="b">class</code>=<code class="r">"hrp-menu-item"</code>&gt;<code
+                            class="d">MenuItem 5</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-menu-submenu-title"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>="iconhrp
+                        icon-tags-fill"&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">MenuSubmenuTitle Three</code> <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &lt;/ul&gt;<br>
+                    </samp>
+                </div>
+
+
+                <!-- tabs -->
+                <h1 id="tabs">标签页 <small>Tabs</small> </h1>
+                <p>选项卡切换组件，常用于平级区域大块内容的的收纳和展现。。
+                </p>
+                <div class="sample">
+                    <div class="hrp-tabs">
+                        <ul class="hrp-tabs-nav">
+                            <li class="hrp-tabs-item active">Picture</li>
+                            <li class="hrp-tabs-item"><a>Music</a></li>
+                            <li class="hrp-tabs-item"><a>Video</a></li>
+                            <li class="hrp-tabs-item"><a>Document</a></li>
+                        </ul>
+                        <div class="hrp-tabs-content">
+                            <div class="hrp-tabs-item-tabpane">
+                                Picture
+                            </div>
+                            <div class="hrp-tabs-item-tabpane">
+                                Music
+                            </div>
+                            <div class="hrp-tabs-item-tabpane">
+                                Video
+                            </div>
+                            <div class="hrp-tabs-item-tabpane">
+                                Document
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-tabs"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<cpde class="r">"hrp-tabs-nav"</cpde>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-tabs-item"</code>&gt;<code class="d">Picture</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">...</code><br>
+                        &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-tabs-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-tabs-item-tabpane"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">Picture</code><br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">...</code><br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                </div>
+
+
+                <!-- page -->
+                <h1 id="page">分页 <small>Page</small> </h1>
+                <p>当数据量较多时，使用分页可以快速进行数据切换。
+                    <br>调用方法<code
+                        class="g">setPage(<code class="o">"#id"</code>,<code class="r">[总页数|默认为0]</code>,<code class="r">[分页数|默认为10]</code>,<code class="r">[当前页数|默认为1]</code>)</code>可以自动生成页码，和页码表单<code>&lt;form id="pageForm"&gt;&lt;/form&gt;</code>。
+                </p>
+                <script type="text/javascript">
+                    $(function () {
+                        setPage("#pagination", 200)
+                    })
+                </script>
+                <div class="sample">
+                    <ul class="hrp-page" id="pagination">
+                        <div class="hrp-page-option">
+                            <div class="hrp-page-options-sizer">
+                                <div class="hrp-select">
+                                    <div class="hrp-select-selection">
+                                        <input readonly="readonly" class="hrp-select-placeholder">
+                                        <input type="hidden" class="hrp-select-selected-value" name="pages">
+                                        <i class="iconhrp icon-down hrp-select-arrow"></i>
+                                    </div>
+                                    <div class="hrp-select-dropdown">
+                                        <ul class="hrp-select-list">
+                                            <li class="hrp-select-item selected" data-value="10">10 条/页</li>
+                                            <li class="hrp-select-item" data-value="20">20 条/页</li>
+                                            <li class="hrp-select-item" data-value="30">30 条/页</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hrp-page-options-elevator">
+                                跳至
+                                <input type="text" autocomplete="off" spellcheck="false" class="hrp-input">
+                                页
+                            </div>
+                        </div>
+                    </ul>
+                    <samp>
+                        &lt;ul <code class="b">class</code>=<code class="r">"hrp-page"</code> <code
+                            class="b">id</code>=<code class="r">"pagination"</code>&gt;<br>
+                        <pre>&nbsp; &lt;!-- 调用 setPage() 方法后，将自动生成下面的页码 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-page-prev"</code>&gt;&lt;a&gt;&lt;i <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-left"</code>&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code class="r">"hrp-page-item active"</code>
+                        <code class="b">title</code>=<code class="r">"1"</code>&gt;&lt;a&gt;<code
+                            class="d">1</code>&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp; <code class="d">...</code><br>
+                        &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-page-next"</code>&gt;&lt;a&gt;&lt;i <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-right"</code>&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                        <pre>&nbsp; &lt;!-- 调用 setPage() 方法后，将自动生成上面的页码 --&gt;</pre>
+                        <br>
+
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-page-option"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-page-options-sizer"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-select"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-select-selection"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code
+                            class="b">readonly</code>=<code class="r">"readonly"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-select-placeholder"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code
+                            class="b">type</code>=<code class="r">"hidden"</code> <code class="b">name</code>=<code
+                            class="r">"pages" </code><code class="b">class</code>=<code
+                            class="r">"hrp-select-selected-value"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code
+                            class="b">class</code>=<code
+                            class="r">"iconhrp icon-down hrp-select-arrow"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-select-dropdown"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code
+                            class="b">class</code>=<code class="r">"hrp-select-list"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code
+                            class="b">class</code>=<code class="r">"hrp-select-item selected"</code> <code
+                            class="b">data-value</code>=<code class="r">"10"</code>&gt;<code
+                            class="d">10 条/页</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code
+                            class="b">class</code>=<code class="r">"hrp-select-item"</code> <code
+                            class="b">data-value</code>=<code class="r">"20"</code>&gt;<code
+                            class="d">20 条/页</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code
+                            class="b">class</code>=<code class="r">"hrp-select-item"</code> <code
+                            class="b">data-value</code>=<code class="r">"30"</code>&gt;<code
+                            class="d">30 条/页</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-page-options-elevator"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">跳至</code>
+                        &lt;input type="text" autocomplete="off" spellcheck="false" <code class="b">class</code>=<code
+                            class="r">"hrp-input"</code>&gt;
+                        <code class="d">页</code><br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br><br>
+                        <pre>&nbsp; &lt;!-- 调用 setPage("#pagination", 200) 方法后，将自动生成下面的表单 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;form <code class="b">id</code>=<code class="r">"pageForm"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code>
+                        <code class="b">name</code>=<code class="r">"pageMax"</code> <code class="b">value</code>=<code
+                            class="r">"200"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code>
+                        <code class="b">name</code>=<code class="r">"pageNum"</code> <code class="b">value</code>=<code
+                            class="r">"20"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code>
+                        <code class="b">name</code>=<code class="r">"perNum"</code> <code class="b">value</code>=<code
+                            class="r">"10"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code>
+                        <code class="b">name</code>=<code class="r">"curNum"</code> <code class="b">value</code>=<code
+                            class="r">"1"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;/form&gt;<br>
+                        &lt;/ul&gt;<br>
+                    </samp>
+                </div>
+
+
+                <!-- input -->
+                <h1 id="input">输入框 <small>Input</small> </h1>
+                <p>基本表单组件，支持 input 和 textarea，并在原生控件基础上进行了功能扩展，可以组合使用。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8 hrp-form-inline">
+                            <div class="hrp-form-item">
+                                <label class="hrp-label">基础输入框</label>
+                                <input class="hrp-input" type="text" name="" placeholder="text">
+                                <label class="hrp-label">只读文本</label>
+                                <input class="hrp-input" type="text" name="" readonly="true" placeholder="readonly"
+                                    value="readonly text">
+                                <label class="hrp-label">禁止文本</label>
+                                <input class="hrp-input" type="text" name="" disabled="true" placeholder="disabled"
+                                    value="disabled text">
+                            </div>
+                        </div>
+                    </div>
+                    <samp style="margin-bottom: 16px;">
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">基础输入框</code>&lt;/label&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input"</code>
+                        type="text" placeholder="text"&gt;<br>
+                        &lt;/div&gt;<br><br>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">只读文本</code>&lt;/label&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input"</code>
+                        type="text" value="readonly text" <code class="g">readonly</code>&gt;<br>
+                        &lt;/div&gt;<br><br>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">禁止文本</code>&lt;/label&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input"</code>
+                        type="text" value="disabled text" <code class="g">disabled</code>&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8 hrp-form-inline">
+                            <div class="hrp-form-item">
+                                <label class="hrp-label">前面 Icon 的输入框</label>
+                                <div class="hrp-input-content">
+                                    <input class="hrp-input hrp-input-width-prefix" type="text" name=""
+                                        placeholder="text">
+                                    <span class="hrp-input-prefix"><i class="iconhrp icon-user"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <samp style="margin-bottom: 16px;">
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">前面 Icon 的输入框</code>&lt;/label&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input hrp-input-width-prefix"</code>
+                        type="text" placeholder="text"&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-prefix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-user"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &lt;/div&gt;<br><br>
+                    </samp>
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8 hrp-form-inline">
+                            <div class="hrp-form-item">
+                                <label class="hrp-label">后面 Icon 的输入框</label>
+                                <div class="hrp-input-content">
+                                    <input class="hrp-input hrp-input-width-suffix" type="text" name=""
+                                        placeholder="text">
+                                    <span class="hrp-input-suffix"><i class="iconhrp icon-eye"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <samp style="margin-bottom: 16px;">
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">后面 Icon 的输入框</code>&lt;/label&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input hrp-input-width-suffix"</code>
+                        type="text" placeholder="text"&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-suffix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-eye"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &lt;/div&gt;<br><br>
+                    </samp>
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8 hrp-form-inline">
+                            <div class="hrp-form-item">
+                                <label class="hrp-label">文本域</label>
+                                <textarea class="hrp-input" type="text" name="" placeholder="textarea"
+                                    rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">文本域</code>&lt;/label&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;textarea <code class="b">class</code>=<code class="r">"hrp-input"</code>
+                        type="text" placeholder="textarea" rows="2"&gt;&lt;/textarea&gt;<br>
+                        &lt;/div&gt;<br><br>
+                    </samp>
+                </div>
+                <p>给文本域添加<code class="b">.hrp-autotext</code>，可以使文本域自适应高度。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8">
+                            <textarea class="hrp-input hrp-autotext" type="text" name="" placeholder="自适应文本域" rows="1"></textarea>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;textarea <code class="b">class</code>=<code class="r">"hrp-input hrp-autotext"</code>
+                        type="text" placeholder="自适应文本域" rows="1"&gt;&lt;/textarea&gt;<br>
+                    </samp>
+                </div>
+
+
+                <!-- radio -->
+                <h1 id="radio">单选 <small>Radio</small> </h1>
+                <p>基本组件-单选框。主要用于一组可选项单项选择，或者单独用于切换到选中状态。</p>
+                <div class="sample">
+                    <label class="hrp-radio"><input type="radio" name="radio"><span class="radio"></span>Radio</label>
+                    <label class="hrp-radio"><input type="radio" name="radio" checked><span class="radio"></span>Radio
+                        Checked</label>
+                    <label class="hrp-radio disabled"><input type="radio" name="radio" disabled><span
+                            class="radio"></span>Radio Disabled</label>
+                    <samp>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-radio"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"radio"</code>
+                        name="radio"&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code
+                            class="r">"radio"</code>&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; <code class="d">Radio</code><br>
+                        &lt;/label&gt;<br>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-radio"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"radio"</code> name="radio"
+                        <code class="g">checked</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code
+                            class="r">"radio"</code>&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; <code class="d">Radio Checked</code><br>
+                        &lt;/label&gt;<br>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-radio disabled"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"radio"</code>
+                        name="radio" <code class="g">disabled</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code
+                            class="r">"radio"</code>&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; <code class="d">Radio Disabled</code><br>
+                        &lt;/label&gt;
+                    </samp>
+                </div>
+
+                <!-- switch -->
+                <h1 id="switch">开关 <small>Switch</small> </h1>
+                <p>在两种状态间切换时用到的开关选择器。</p>
+                <div class="sample">
+                    <div class="hrp-switch">
+                        <span class="hrp-switch-inner on" data-value='yes'>开</span>
+                        <span class="hrp-switch-inner off" data-value="no">关</span>
+                        <input type="hidden" value="yes">
+                    </div>
+                    <div class="hrp-switch large">
+                        <span class="hrp-switch-inner on" data-value='yes'>ON</span>
+                        <span class="hrp-switch-inner off" data-value="yes">OFF</span>
+                        <input type="hidden" value="no">
+                    </div>
+                    <div class="hrp-switch large disabled">
+                        <span class="hrp-switch-inner on" data-value='yes'>ON</span>
+                        <span class="hrp-switch-inner off" data-value="yes">OFF</span>
+                        <input type="hidden" value="yes">
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-switch"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-switch-inner on"</code>
+                        data-value=<code class="r">"yes"</code>&gt;<code class="d">开</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-switch-inner off"</code>
+                        data-value=<code class="r">"no"</code>&gt;<code class="d">关</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code> <code
+                            class="b">value</code>=<code class="r">"yes"</code>&gt;<br>
+                        &lt;/div&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-switch large"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-switch-inner on"</code>
+                        data-value=<code class="r">"yes"</code>&gt;<code class="d">ON</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-switch-inner off"</code>
+                        data-value=<code class="r">"no"</code>&gt;<code class="d">OFF</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code> <code
+                            class="b">value</code>=<code class="r">"no"</code>&gt;<br>
+                        &lt;/div&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-switch large disabled"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-switch-inner on"</code>
+                        data-value=<code class="r">"yes"</code>&gt;<code class="d">ON</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-switch-inner off"</code>
+                        data-value=<code class="r">"no"</code>&gt;<code class="d">OFF</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code> <code class="b">value</code>=<code
+                            class="r">"no"</code>&gt;<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+
+                <!-- checkbox -->
+                <h1 id="checkbox">复选 <small>Checkbox</small> </h1>
+                <p>基本组件-多选框。主要用于一组可选项多项选择，或者单独用于标记切换某种状态。</p>
+                <div class="sample">
+                    <label class="hrp-checkbox"><input type="checkbox" name="checkbox"><span class="checkbox"><i
+                                class="iconhrp icon-check"></i></span>Checkbox</label>
+                    <label class="hrp-checkbox"><input type="checkbox" name="checkbox" checked><span class="checkbox"><i
+                                class="iconhrp icon-check"></i></span>Checkbox Checked</label>
+                    <label class="hrp-checkbox disabled"><input type="checkbox" name="checkbox" disabled><span
+                            class="checkbox"><i class="iconhrp icon-check"></i></span>Checkbox Disabled</label>
+                    <samp>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-checkbox"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"checkbox"</code>
+                        name="checkbox"&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"checkbox"</code>&gt;&lt;i
+                        <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-check"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; <code class="d">Checkbox</code><br>
+                        &lt;/label&gt;<br>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-checkbox"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"checkbox"</code>
+                        name="checkbox" <code class="g">checked</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"checkbox"</code>&gt;&lt;i
+                        <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-check"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; <code class="d">Checkbox Checked</code><br>
+                        &lt;/label&gt;<br>
+                        &lt;label <code class="b">class</code>=<code class="r">"hrp-checkbox disabled"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"checkbox"</code>
+                        name="checkbox" <code class="g">disabled</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"checkbox"</code>&gt;&lt;i
+                        <code class="b">class</code>=<code
+                            class="r">"iconhrp icon-check"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; <code class="d">Checkbox Disabled</code><br>
+                        &lt;/label&gt;
+                    </samp>
+                </div>
+
+
+                <!-- select -->
+                <h1 id="select">选择器 <small>Select</small> </h1>
+                <p>使用模拟的下拉选择器来代替浏览器原生的选择器，支持自动清空。</p>
+                <p>通过添加<code class="r">.readonly</code>和<code class="r">.disabled</code>将选择器设置为<code class="r">只读</code>和<code class="r">禁用</code>状态。</p>
+                <div class="sample">
+                    <div class="hrp-select" style="width: 200px;">
+                        <div class="hrp-select-selection">
+                            <input readonly class="hrp-select-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-select-selected-value" value="S1">
+                            <i class="iconhrp icon-down hrp-select-arrow"></i>
+                        </div>
+                        <div class="hrp-select-dropdown">
+                            <ul class="hrp-select-list">
+                                <li class="hrp-select-item" data-value="S1">SelectItem 1</li>
+                                <li class="hrp-select-item" data-value="S2">SelectItem 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hrp-select readonly" style="width: 200px;">
+                        <div class="hrp-select-selection">
+                            <input readonly class="hrp-select-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-select-selected-value">
+                            <i class="iconhrp icon-down hrp-select-arrow"></i>
+                        </div>
+                        <div class="hrp-select-dropdown">
+                            <ul class="hrp-select-list">
+                                <li class="hrp-select-item" data-value="S1">SelectItem 1</li>
+                                <li class="hrp-select-item selected" data-value="S2">SelectItem 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hrp-select disabled" style="width: 200px;">
+                        <div class="hrp-select-selection">
+                            <input readonly class="hrp-select-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-select-selected-value">
+                            <i class="iconhrp icon-down hrp-select-arrow"></i>
+                        </div>
+                        <div class="hrp-select-dropdown">
+                            <ul class="hrp-select-list">
+                                <li class="hrp-select-item" data-value="S1">SelectItem 1</li>
+                                <li class="hrp-select-item selected" data-value="S2">SelectItem 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-select"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-select-selection"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="g">readonly</code> <code class="b">class</code>=<code
+                            class="r">"hrp-select-placeholder"</code> <code class="b">placeholder="请选择"</code>&gt;
+                            //显示Text<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code>
+                        <code class="b">class</code>=<code class="r">"hrp-select-selected-value"</code> <code class="b">value</code>=<code class="r">"S1"</code>&gt;
+                        //真实value<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>=<code class="r">"iconhrp icon-down hrp-select-arrow"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-select-dropdown"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<code class="r">"hrp-select-list"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-select-item"</code> <code class="b">data-value</code>=<code
+                            class="r">"S1"</code>&gt;<code class="d">SelectItem 1</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-select-item"</code> <code class="b">data-value</code>=<code
+                            class="r">"S2"</code>&gt;<code class="d">SelectItem 2</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                </div>
+                <p>给选择器添加<code>.clearable</code>，可以使选择器变为可清空类型。</p>
+                <div class="sample">
+                    <div class="hrp-select clearable" style="width: 200px;">
+                        <div class="hrp-select-selection">
+                            <input readonly="readonly" class="hrp-select-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-select-selected-value" value="S1">
+                            <i class="iconhrp icon-down hrp-select-arrow"></i>
+                        </div>
+                        <div class="hrp-select-dropdown">
+                            <ul class="hrp-select-list">
+                                <li class="hrp-select-item" data-value="S1">SelectItem 1</li>
+                                <li class="hrp-select-item" data-value="S2">SelectItem 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-select clearable"</code>&gt;<br>
+                        &nbsp;&nbsp; ...<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+
+                <!-- autocomplete -->
+                <h1 id="autocomplete">检索框 <small>Autocomplete</small> </h1>
+                <p>检索框是可带输入建议的输入框，支持前端检索和后端检索。</p>
+                <p>通过添加<code class="r">.readonly</code>和<code class="r">.disabled</code>将检索框设置为<code class="r">只读</code>和<code class="r">禁用</code>状态。</p>
+                <div class="sample">
+                    <div class="hrp-autocomplete" style="width: 200px;">
+                        <div class="hrp-autocomplete-selection">
+                            <input id="autoDemo" class="hrp-autocomplete-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-autocomplete-selected-value" value="S1">
+                        </div>
+                        <div class="hrp-autocomplete-dropdown">
+                            <ul class="hrp-autocomplete-list">
+                                <li class="hrp-autocomplete-item" data-value="S1">测试名称1</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hrp-autocomplete readonly" style="width: 200px;">
+                        <div class="hrp-autocomplete-selection">
+                            <input class="hrp-autocomplete-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-autocomplete-selected-value" value="S2">
+                        </div>
+                        <div class="hrp-autocomplete-dropdown">
+                            <ul class="hrp-autocomplete-list">
+                                <li class="hrp-autocomplete-item" data-value="S2">测试名称2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hrp-autocomplete disabled" style="width: 200px;">
+                        <div class="hrp-autocomplete-selection">
+                            <input class="hrp-autocomplete-placeholder" placeholder="请选择">
+                            <input type="hidden" class="hrp-autocomplete-selected-value" value="S2">
+                        </div>
+                        <div class="hrp-autocomplete-dropdown">
+                            <ul class="hrp-autocomplete-list">
+                                <li class="hrp-autocomplete-item" data-value="S2">测试名称2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-autocomplete"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-autocomplete-selection"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">id</code>=<code class="r">"autoDemo"</code>
+                        <code class="b">class</code>=<code class="r">"hrp-autocomplete-placeholder"</code> <code class="b">placeholder="请选择"</code>&gt; //显示Text<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">type</code>=<code class="r">"hidden"</code>
+                        <code class="b">class</code>=<code class="r">"hrp-autocomplete-selected-value"</code> <code class="b">value</code>=<code class="r">"S1"</code>&gt; //真实value<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-autocomplete-dropdown"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<code class="r">"hrp-autocomplete-list"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-autocomplete-item"</code> <code class="b">data-value</code>=<code
+                            class="r">"S1"</code>&gt;<code class="d">测试名称1</code>&lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+                <script type="text/javascript">
+                    const list = [
+                        { id: '001', searchName: '测试名称1', searchValue: 'S1' },
+                        { id: '002', searchName: '测试名称2', searchValue: 'S2' },
+                        { id: '003', searchName: '谢婉玉测试', searchValue: 'XWY' }
+                    ]
+                    $('#autoDemo').focus(function (e) {
+                        searchQueryAuto($(this), list, 'searchName', 'searchValue', true);
+                    })
+                    $('#autoDemo').bind('input propertychange', function () {
+                        searchQueryAuto($(this), list, 'searchName', 'searchValue', true);
+                    })
+                </script>
+                <p>检索框需要使用 jQuery 方法来实现匹配和渲染功能：</p>
+                <div class="sample" style="margin-top:0">
+                    <samp>
+                        <code class="b">const</code> list = [<br>
+                        &nbsp;&nbsp; { id: '001', searchName: '测试名称1', searchValue: 'S1' },<br>
+                        &nbsp;&nbsp; { id: '002', searchName: '测试名称2', searchValue: 'S1' },<br>
+                        &nbsp;&nbsp; { id: '003', searchName: '谢婉玉测试', searchValue: 'XWY' }<br>
+                        ]<br>
+                        $(<code class="o">'#autoDemo'</code>).focus(<code class="b">function</code>(e){<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 检索框获取焦点的时候，匹配和渲染下拉列表 --&gt;</pre>
+                        &nbsp;&nbsp; <code class="g">searchQueryAuto</code>(<code class="b">$(this)</code>,<code
+                            class="b">list</code>,<code class="o">'searchName'</code>,<code
+                            class="o">'searchValue'</code>,<code class="r">true</code>);<br>
+                        })<br>
+                        $(<code class="o">'#autoDemo'</code>).bind('input propertychange', <code
+                            class="b">function</code>() {<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 检索框输入的时候，匹配和渲染下拉列表 --&gt;</pre>
+                        &nbsp;&nbsp; <code class="g">searchQueryAuto</code>(<code class="b">$(this)</code>,<code
+                            class="b">list</code>,<code class="o">'searchName'</code>,<code
+                            class="o">'searchValue'</code>,<code class="r">true</code>);<br>
+                        })
+                    </samp>
+                </div>
+                <p>
+                    <code class="g">searchQueryAuto(<code class="r">$(this)</code>,<code class="r">List</code>,<code
+                        class="r">Name</code>,<code class="r">Value</code>,<code
+                        class="r">Bool</code>)</code>方法用来匹配和渲染检索列表：<br>
+                    <code class="r">List</code> 代表需要进行检索的目标列表，类型为 <code>array</code>；<br>
+                    <code class="r">Name</code> 代表<code class="r">List</code>中表示显示值的键，类型为 <code>string</code>；<br>
+                    <code class="r">Value</code> 代表<code class="r">List</code>中表示真实值的键，类型为 <code>string</code>；<br>
+                    <code class="r">Bool</code> 代表检索类型是否启用前台检索，类型为
+                    <code>boolean</code>，如果启用前台检索，则会在前端对输入值进行匹配，并渲染匹配后的<code class="r">List</code>；如果不启用前台检索，则<code
+                        class="r">List</code>只会进行渲染，不会自动匹配：
+                </p>
+                <div class="sample" style="margin-top:0">
+                    <samp>
+                        $(<code class="o">'#autoDemo'</code>).focus(<code class="b">function</code>(e){<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 检索框获取焦点的时候，渲染下拉列表 --&gt;</pre>
+                        &nbsp;&nbsp; <code class="b">const</code> list = [<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; { id: '001', searchName: '测试名称1', searchValue: 'S1' },<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; { id: '002', searchName: '测试名称2', searchValue: 'S1' },<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; { id: '003', searchName: '谢婉玉测试', searchValue: 'XWY' }<br>
+                        &nbsp;&nbsp; ]<br>
+                        &nbsp;&nbsp; <code class="g">searchQueryAuto</code>(<code class="b">$(this)</code>,<code
+                            class="b">list</code>,<code class="o">'searchName'</code>,<code
+                            class="o">'searchValue'</code>,<code class="r">false</code>);<br>
+                        })<br>
+                        $(<code class="o">'#autoDemo'</code>).bind('input propertychange', <code
+                            class="b">function</code>() {<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- 检索框输入的时候，渲染下拉列表 --&gt;</pre>
+                        &nbsp;&nbsp; <code class="b">const</code> list = [<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; { id: '001', searchName: '测试名称1', searchValue: 'S1' },<br>
+                        &nbsp;&nbsp; ]<br>
+                        &nbsp;&nbsp; <code class="g">searchQueryAuto</code>(<code class="b">$(this)</code>,<code
+                            class="b">list</code>,<code class="o">'searchName'</code>,<code
+                            class="o">'searchValue'</code>,<code class="r">false</code>);<br>
+                        })
+                    </samp>
+                </div>
+
+
+                <!-- datePicker -->
+                <h1 id="datePicker">日期选择器 <small>DatePicker</small> </h1>
+                <p>选择或输入日期，支持年、月、日期类型，支持选择范围。</p>
+                <div class="sample">
+                    <div class="hrp-datepicker" style="width: 200px;">
+                        <input class="hrp-input hrp-input-width-suffix" type="text" placeholder="date">
+                        <span class="hrp-input-suffix"><i class="iconhrp icon-calendar"></i></span>
+                    </div>
+                    <div class="hrp-datepicker" style="width: 200px;">
+                        <input class="hrp-input hrp-input-width-suffix" type="text" placeholder="date" readonly>
+                        <span class="hrp-input-suffix"><i class="iconhrp icon-calendar"></i></span>
+                    </div>
+                    <div class="hrp-datepicker" style="width: 200px;">
+                        <input class="hrp-input hrp-input-width-suffix" type="text" placeholder="date" disabled>
+                        <span class="hrp-input-suffix"><i class="iconhrp icon-calendar"></i></span>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-datepicker"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input hrp-input-width-suffix"</code>
+                        type="text" placeholder="date"&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-suffix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-calendar"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &lt;/div&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-datepicker"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input hrp-input-width-suffix"</code>
+                        type="text" placeholder="date" <code class="g">readonly</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-suffix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-calendar"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &lt;/div&gt;<br>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-datepicker"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input hrp-input-width-suffix"</code>
+                        type="text" placeholder="date"<code class="g">disabled</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-suffix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-calendar"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                </div>
+                <p>给选择器添加<code class="r">.clearable</code>，可以使选择器变为可清空类型。</p>
+                <div class="sample">
+                    <div class="hrp-datepicker clearable" style="width: 200px;">
+                        <input class="hrp-input hrp-input-width-suffix" type="text" placeholder="date">
+                        <span class="hrp-input-suffix"><i class="iconhrp icon-calendar"></i></span>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-datepicker clearable"</code>&gt;<br>
+                        &nbsp;&nbsp; ...<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+                <p>给选择器添加<code class="r">.readonly</code>，可以使选择器的输入框变为只读。</p>
+                <div class="sample">
+                    <div class="hrp-datepicker clearable readonly" style="width: 200px;">
+                        <input class="hrp-input hrp-input-width-suffix" type="text" placeholder="date">
+                        <span class="hrp-input-suffix"><i class="iconhrp icon-calendar"></i></span>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-datepicker clearable readonly"</code>&gt;<br>
+                        &nbsp;&nbsp; ...<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+
+                <!-- form -->
+                <h1 id="form">表单 <small>Form</small> </h1>
+                <p>表单域<code class="r">.hrp-form</code>默认由上到下排列；通过为<code class="r">.hrp-form-item</code>设置<code
+                        class="r">.hrp-form-item-required</code>控制必填样式。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8">
+                            <div class="hrp-form">
+                                <div class="hrp-form-item">
+                                    <label class="hrp-label">Name</label>
+                                    <div class="hrp-input-content">
+                                        <input class="hrp-input" type="text" placeholder="text">
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item">
+                                    <label class="hrp-label">City</label>
+                                    <div class="hrp-input-content">
+                                        <div class="hrp-select">
+                                            <div class="hrp-select-selection">
+                                                <input readonly="readonly" class="hrp-select-placeholder"
+                                                    placeholder="请选择">
+                                                <input type="hidden" class="hrp-select-selected-value" name="city">
+                                                <i class="iconhrp icon-down hrp-select-arrow"></i>
+                                            </div>
+                                            <div class="hrp-select-dropdown">
+                                                <ul class="hrp-select-list">
+                                                    <li class="hrp-select-item" data-value="city1">China</li>
+                                                    <li class="hrp-select-item" data-value="city2">London</li>
+                                                    <li class="hrp-select-item" data-value="city3">New York</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-form"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-form-item"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">Name</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input"</code>
+                        type="text" placeholder="text"&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-form-item"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">City</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-select"</code>&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+                <p>为<code class="r">.hrp-form</code>设置属性<code class="r">.hrp-form-inline</code>，表单元素可以水平排列。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col">
+                            <div class="hrp-form hrp-form-inline">
+                                <div class="hrp-form-item">
+                                    <label class="hrp-label">User</label>
+                                    <div class="hrp-input-content">
+                                        <input class="hrp-input hrp-input-width-prefix" type="text" placeholder="text">
+                                        <span class="hrp-input-prefix"><i class="iconhrp icon-user"></i></span>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item">
+                                    <label class="hrp-label">Password</label>
+                                    <div class="hrp-input-content">
+                                        <input class="hrp-input hrp-input-width-prefix" type="password" placeholder="password">
+                                        <span class="hrp-input-prefix"><i class="iconhrp icon-lock"></i></span>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item">
+                                    <div class="hrp-input-content">
+                                        <button class="hrp-btn hrp-btn-primary">Signin</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form hrp-form-inline"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-form-item"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">User</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code class="r">"hrp-input hrp-input-width-prefix"</code>
+                        type="text" placeholder="text"&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-prefix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-user"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-form-item"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code class="r">"hrp-label"</code>&gt;<code
+                            class="d">Password</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code
+                            class="r">"hrp-input hrp-input-width-prefix"</code>
+                        type="text" placeholder="password"&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;span <code class="b">class</code>=<code class="r">"hrp-input-prefix"</code>&gt;&lt;i <code
+                            class="b">class</code>=<code class="r">"iconhrp icon-lock"</code>&gt;&lt;/i&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-form-item"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-primary"</code>&gt;<code class="d">Signin</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+                <p>为<code class="r">.hrp-form</code>设置属性<code class="r">.hrp-form-right</code>，表单标签右对齐。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-12">
+                            <div class="hrp-form hrp-form-right" id="demoForm">
+                                <div class="hrp-form-item hrp-form-item-required">
+                                    <label class="hrp-label">Name</label>
+                                    <div class="hrp-input-content">
+                                        <input class="hrp-input" type="text" name="name" placeholder="text">
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item hrp-form-item-required">
+                                    <label class="hrp-label">City</label>
+                                    <div class="hrp-input-content">
+                                        <div class="hrp-select clearable">
+                                            <div class="hrp-select-selection">
+                                                <input readonly="readonly" class="hrp-select-placeholder" placeholder="请选择">
+                                                <input type="hidden" class="hrp-select-selected-value" name="city" value="444">
+                                                <i class="iconhrp icon-down hrp-select-arrow"></i>
+                                            </div>
+                                            <div class="hrp-select-dropdown">
+                                                <ul class="hrp-select-list">
+                                                    <li class="hrp-select-item" data-value="111">Beijing</li>
+                                                    <li class="hrp-select-item" data-value="222">Shanghai</li>
+                                                    <li class="hrp-select-item" data-value="333">Guangzhou</li>
+                                                    <li class="hrp-select-item" data-value="444">Wuhan</li>
+                                                    <li class="hrp-select-item" data-value="555">Qingdao</li>
+                                                    <li class="hrp-select-item" data-value="666">Xian</li>
+                                                    <li class="hrp-select-item" data-value="777">Nanjing</li>
+                                                    <li class="hrp-select-item" data-value="888">Hangzhou</li>
+                                                    <li class="hrp-select-item" data-value="999">Sichuan</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item hrp-form-item-required">
+                                    <label class="hrp-label">Gender</label>
+                                    <div class="hrp-input-content">
+                                        <div class="hrp-radio-group">
+                                            <label class="hrp-radio">
+                                                <input type="radio" name="gender" value="male">
+                                                <span class="radio"></span>Male
+                                            </label>
+                                            <label class="hrp-radio">
+                                                <input type="radio" name="gender" value="female">
+                                                <span class="radio"></span>Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item hrp-form-item-required">
+                                    <label class="hrp-label">Hobby</label>
+                                    <div class="hrp-input-content">
+                                        <div class="hrp-checkbox-group">
+                                            <label class="hrp-checkbox">
+                                                <input type="checkbox" name="hobby" value="eat">
+                                                <span class="checkbox"></span>Eat
+                                            </label>
+                                            <label class="hrp-checkbox">
+                                                <input type="checkbox" name="hobby" value="sleep">
+                                                <span class="checkbox"></span>Sleep
+                                            </label>
+                                            <label class="hrp-checkbox">
+                                                <input type="checkbox" name="hobby" value="run">
+                                                <span class="checkbox"></span>Run
+                                            </label>
+                                            <label class="hrp-checkbox">
+                                                <input type="checkbox" name="hobby" value="movie">
+                                                <span class="checkbox"></span>Movie
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item hrp-form-item-required">
+                                    <label class="hrp-label">Birthday</label>
+                                    <div class="hrp-input-content">
+                                        <div class="hrp-datepicker clearable">
+                                            <input class="hrp-input hrp-input-width-suffix" type="text" placeholder="date">
+                                            <span class="hrp-input-suffix"><i class="iconhrp icon-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item hrp-form-item-required">
+                                    <label class="hrp-label">Desc</label>
+                                    <div class="hrp-input-content">
+                                        <textarea class="hrp-input hrp-autotext" rows="2" placeholder="Enter something..."
+                                            name="desc"></textarea>
+                                    </div>
+                                </div>
+                                <div class="hrp-form-item">
+                                    <div class="hrp-input-content">
+                                        <button class="hrp-btn hrp-btn-primary" onclick="formRequire('#demoForm')">Submit</button>
+                                        <button class="hrp-btn hrp-btn-default" onclick="formReset('#demoForm')">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-form hrp-form-right"</code> <code class="b">id</code>=<code class="r">"demoForm"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form-item hrp-form-item-required"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code
+                            class="r">"hrp-label"</code>&gt;<code class="d">Name</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;input <code class="b">class</code>=<code
+                            class="r">"hrp-input"</code> type="text" placeholder="text"&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form-item hrp-form-item-required"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code
+                            class="r">"hrp-label"</code>&gt;<code class="d">City</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-select"</code>&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form-item hrp-form-item-required"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code
+                            class="r">"hrp-label"</code>&gt;<code class="d">Gender</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-radio-group"</code>&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form-item hrp-form-item-required"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code
+                            class="r">"hrp-label"</code>&gt;<code class="d">Hobby</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-checkbox-group"</code>&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form-item hrp-form-item-required"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;label <code class="b">class</code>=<code
+                            class="r">"hrp-label"</code>&gt;<code class="d">Birthday</code>&lt;/label&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-datepicker"</code>&gt;...&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; ...<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form-item hrp-form-item-required"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-input-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-primary"</code> <code class="b">onclick</code>=<code
+                            class="g">"formRequire(<code class="o">'#demoForm'</code>)"</code>&gt;<code
+                            class="d">Submit</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-default"</code> <code class="b">onclick</code>=<code
+                            class="g">"formReset(<code class="o">'#demoForm'</code>)"</code>&gt;<code
+                            class="d">Reset</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+
+                <!-- table -->
+                <h1 id="table">表格 <small>Table</small> </h1>
+                <p>主要用于展示大量结构化数据，支持展开和拖拽功能。</p>
+                <p>给表格添加<code class="r">.fixed</code>设置为固定表格布局，自由设定列宽。</p>
+                <div class="sample">
+                    <table class="hrp-table fixed" id="expand-table">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="50px">
+                            <col width="28%">
+                            <col width="30%">
+                            <col width="40%">
+                            <col width="22%">
+                            <col width="160px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>E-mail</th>
+                                <th>wage</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Lilei</td>
+                                <td>00-238478293</td>
+                                <td>kmills8@loc.gov</td>
+                                <td>5000</td>
+                                <td><button type="button" class="hrp-btn hrp-btn-primary">Add</button>&nbsp;<button
+                                        type="button" class="hrp-btn hrp-btn-error">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Hanmeimei</td>
+                                <td>01-328469821</td>
+                                <td>acunningham4@blogs.com</td>
+                                <td>8000</td>
+                                <td><button type="button" class="hrp-btn hrp-btn-primary">Add</button>&nbsp;<button
+                                        type="button" class="hrp-btn hrp-btn-error">Delete</button></td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>Wangxiaoer</td>
+                                <td>20-238462838</td>
+                                <td>ssimpson3@pagesperso.org</td>
+                                <td>50000000</td>
+                                <td><button type="button" class="hrp-btn hrp-btn-primary">Add</button>&nbsp;<button
+                                        type="button" class="hrp-btn hrp-btn-error">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <samp>
+                        &lt;table <code class="b">class</code>=<code class="r">"hrp-table fixed"</code> <code
+                            class="b">id</code>=<code class="r">"expand-table"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;colgroup&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"50px"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"28%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"30%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"40%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"22%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"160px"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;/colgroup&gt;<br>
+                        &nbsp;&nbsp; <code class="d">...</code><br>
+                        &lt;/table&gt;
+                        <pre>&lt;!-- 使用<code class="g">openTooltip(e, cont, type)</code>和<code class="g">closeTooltip(e)</code>可以单独控制提示框 --&gt;</pre>
+                    </samp>
+                </div>
+                <p>在表格内调用方法<code class="g">tableExpand(<code class="o">this</code>,<code
+                        class="o">'#id'</code>,<code class="r">accordion</code>)</code>开启当前行的展开功能，<code class="r">accordion</code>为手风琴模式标识，设置为<code class="b">true</code>时每次只能展开一行。</p>
+                <div class="sample">
+                    <table class="hrp-table fixed">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="50px">
+                            <col width="24%">
+                            <col width="30%">
+                            <col width="40%">
+                            <col width="18%">
+                            <col width="120px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>E-mail</th>
+                                <th>wage</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Lilei</td>
+                                <td>00-238478293</td>
+                                <td>kmills8@loc.gov</td>
+                                <td>5000</td>
+                                <td><button type="button" class="hrp-btn hrp-btn-primary"
+                                        onclick="tableExpand(this,'#expand-table')">expand</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Hanmeimei</td>
+                                <td>01-328469821</td>
+                                <td>acunningham4@blogs.com</td>
+                                <td>8000</td>
+                                <td><button type="button" class="hrp-btn hrp-btn-primary"
+                                        onclick="tableExpand(this,'#expand-table')">expand</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <samp>
+                        &lt;table <code class="b">class</code>=<code class="r">"hrp-table fixed"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;tbody&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;tr&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;<code class="d">1</code>&lt;/td&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;<code class="d">Lilei</code>&lt;/td&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;<code
+                            class="d">00-238478293</code>&lt;/td&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;<code
+                            class="d">kmills8@loc.gov</code>&lt;/td&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;<code class="d">5000</code>&lt;/td&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;td&gt;&lt;button <code class="b">type</code>=<code
+                            class="r">"button"</code> <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-primary"</code> <code class="b">onclick</code>=<code
+                            class="g">"tableExpand(<code class="o">this</code>,<code
+                            class="o">'#expand-table'</code>)"</code>&gt;<code
+                            class="d">expand</code>&lt;/button&gt;&lt;/td&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/tr&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">...</code><br>
+                        &nbsp;&nbsp; &lt;/tbody&gt;<br>
+                        &lt;/table&gt;
+                    </samp>
+                </div>
+                <p>给表格添加<code class="r">.hrp-resizable</code>可以拖拽调整列的宽度，需开启<code class="r">fixed</code>属性，且该列设置了 width 属性。
+                </p>
+                <div class="sample">
+                    <table class="hrp-table fixed hrp-resizable">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="50px">
+                            <col width="28%">
+                            <col width="30%">
+                            <col width="36%">
+                            <col width="22%">
+                            <col width="160px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>E-mail</th>
+                                <th>wage</th>
+                                <th>action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Lilei</td>
+                                <td>00-238478293</td>
+                                <td>kmills8@loc.gov</td>
+                                <td>5000</td>
+                                <td>可以尝试拖拽表格</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Hanmeimei</td>
+                                <td>01-328469821</td>
+                                <td>acunningham4@blogs.com</td>
+                                <td>8000</td>
+                                <td>可以尝试拖拽表格</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>Wangxiaoer</td>
+                                <td>20-238462838</td>
+                                <td>ssimpson3@pagesperso.org</td>
+                                <td>50000000</td>
+                                <td>可以尝试拖拽表格</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <samp>
+                        &lt;table <code class="b">class</code>=<code
+                            class="r">"hrp-table fixed hrp-resizable"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;colgroup&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"50px"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"28%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"30%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"36%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"22%"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;col <code class="b">width</code>=<code
+                            class="r">"160px"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;/colgroup&gt;<br>
+                        &nbsp;&nbsp; <code class="d">...</code><br>
+                        &lt;/table&gt;
+                    </samp>
+                </div>
+
+
+                <!-- message -->
+                <h1 id="message">弹框 <small>Message</small> </h1>
+                <p>弹框用于反馈用户操作结果或者状态的变更，在顶部居中显示，2秒后自动消失，需要页面有<code class="r">.hrp-message-box</code>。</p>
+                <div class="sample">
+                    <button class="hrp-btn hrp-btn-default"
+                        onclick="showMessage('primary','This is a Message.')">普通提示</button>
+                    <button class="hrp-btn hrp-btn-default" onclick="showMessage('success','Success')">成功提示</button>
+                    <button class="hrp-btn hrp-btn-default" onclick="showMessage('warning','Warning')">警告提示</button>
+                    <button class="hrp-btn hrp-btn-default" onclick="showMessage('error','Error')">错误提示</button>
+                    <div class="hrp-message-box">
+
+                    </div>
+                    <samp>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code
+                            class="g">"showMessage( <coe class="o">'primary'</coe>,<code class="o">'This is a Message.'</code>)"</code>&gt;<code
+                            class="d">普通提示</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code
+                            class="g">"showMessage( <coe class="o">'success'</coe>,<code class="o">'Success!'</code>)"</code>&gt;<code
+                            class="d">成功提示</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code
+                            class="g">"showMessage( <coe class="o">'warning'</coe>,<code class="o">'Warning!'</code>)"</code>&gt;<code
+                            class="d">警告提示</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code
+                            class="g">"showMessage( <coe class="o">'error'</coe>,<code class="o">'Error!'</code>)"</code>&gt;<code
+                            class="d">错误提示</code>&lt;/button&gt;<br>
+                        &lt;div <code class="b">class</code>="hrp-message-box"&gt;
+                        <pre>&nbsp;&nbsp; &lt;!-- 所有的 Message 将插入在这里，每个单独的页面只需要一个 message-box --&gt;</pre>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+
+                <!-- modal -->
+                <h1 id="modal">模态 <small>Modal</small> </h1>
+                <p>对话和确认，需要用户进行操作。自定义页头、页脚和主体内容，通过点击<code class="r">.modal-close</code>来关闭Modal。</p>
+                <div class="sample">
+                    <button class="hrp-btn hrp-btn-default" onclick="showModal('#Dialog')">Modal 演示</button>
+                    <div id="Dialog" class="hrp-modal">
+                        <div class="hrp-modal-title">
+                            Title <i class="iconhrp icon-close hrp-close modal-close"></i>
+                        </div>
+                        <div class="hrp-modal-content">
+                            <i class="iconhrp icon-check-circle-fill hrp-modal-icon hrp-color-success"></i>
+                            <span>This is a modal.</span>
+                        </div>
+                        <div class="hrp-modal-footer">
+                            <button class="hrp-btn hrp-btn-default modal-close" onclick="showMessage('primary','点击了Cancel.')">Cancel</button>
+                            <button class="hrp-btn hrp-btn-primary modal-close" onclick="showMessage('primary','点击了OK.')">OK</button>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code class="g">"showModal(<code class="o">'#Demo'</code>)"</code>&gt;<code
+                            class="d">Modal 演示</code>&lt;/button&gt;<br>
+                        &lt;div <code class="b">id</code>=<code class="r">"Demo"</code> <code class="b">class</code>=<code class="r">"hrp-modal"</code>&gt;<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- Modal 页头 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-modal-title"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; <code class="d">Title</code> <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>=<code class="r">"iconhrp icon-close hrp-close modal-close"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- Modal 主体 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-modal-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;i <code class="b">class</code>=<code class="r">"iconhrp icon-check-circle-fill hrp-modal-icon hrp-color-success"</code>&gt;&lt;/i&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;span&gt;<code class="d">This is a modal.</code>&lt;/span&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        <pre>&nbsp;&nbsp; &lt;!-- Modal 页脚 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-modal-footer"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default modal-close"</code> 
+                            <code class="b">onclick</code>=<code class="g">"showMessage(<code class="o">'primary','点击了Cancel.'</code>)"</code>&gt;<code class="d">Cancel</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-primary modal-close"</code> 
+                            <code class="b">onclick</code>=<code class="g">"showMessage(<code class="o">'primary','点击了OK.'</code>)"</code>&gt;<code class="d">OK</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                </div>
+
+                <!-- <div class="mask"></div> -->
+
+                <!-- drawer -->
+                <h1 id="drawer">抽屉 <small>Drawer</small> </h1>
+                <p>当需要一个附加的面板来控制父窗体内容，这个面板在需要时呼出；或者需要在当前任务流中插入临时任务，创建或预览附加内容时使用。 <br>
+                    抽屉类型分为 ‘view’ 和 ‘create’ ，<code>View Drawer</code>只用于信息展示，<code>Create Drawer</code>用于承载编辑相关操作，需要点击关闭按钮关闭。</p>
+                <div class="sample">
+                    <button class="hrp-btn hrp-btn-default" onclick="showDrawer('#viewdrawer', 'view')">View Drawer 演示</button>
+                    <div id="viewdrawer" class="hrp-drawer">
+                        <div class="hrp-drawer-content">
+                            <div class="hrp-drawer-head">
+                                <div class="hrp-drawer-title">View Drawer</div>
+                            </div>
+                            <div class="hrp-drawer-body">
+                                <p>Some contents...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <samp style="margin-bottom: 16px;">
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code class="g">"showDrawer(<code class="o">'#viewdrawer', 'view'</code>)"</code>><code
+                            class="d">View Drawer 演示</code>&lt;/button&gt;<br>
+                        &lt;div <code class="b">id</code>=<code class="r">"viewdrawer"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-drawer"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-drawer-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-drawer-head"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-drawer-title"</code>&gt;<code class="d">View Drawer</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-drawer-body"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;p&gt;<code
+                            class="d">Some contents...</code>&lt;/p&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                    <button class="hrp-btn hrp-btn-default" onclick="showDrawer('#createdrawer', 'create')">Create Drawer 演示</button>
+                    <div id="createdrawer" class="hrp-drawer" style="width: 500px;">
+                        <div class="hrp-drawer-content">
+                            <div class="hrp-drawer-head">
+                                <div class="hrp-drawer-title">Create Drawer</div>
+                            </div>
+                            <div class="hrp-drawer-body">
+                                <div class="hrp-form hrp-form-right">
+                                    <div class="hrp-form-item">
+                                        <label class="hrp-label">Name</label>
+                                        <div class="hrp-input-content">
+                                            <input class="hrp-input" type="text" placeholder="text">
+                                        </div>
+                                    </div>
+                                    <div class="hrp-form-item">
+                                        <label class="hrp-label">City</label>
+                                        <div class="hrp-input-content">
+                                            <div class="hrp-select">
+                                                <div class="hrp-select-selection">
+                                                    <input readonly="readonly" class="hrp-select-placeholder" placeholder="请选择">
+                                                    <input type="hidden" class="hrp-select-selected-value" name="city">
+                                                    <i class="iconhrp icon-down hrp-select-arrow"></i>
+                                                </div>
+                                                <div class="hrp-select-dropdown">
+                                                    <ul class="hrp-select-list">
+                                                        <li class="hrp-select-item" data-value="city1">China</li>
+                                                        <li class="hrp-select-item" data-value="city2">London</li>
+                                                        <li class="hrp-select-item" data-value="city3">New York</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hrp-form-item">
+                                        <label class="hrp-label">Gender</label>
+                                        <div class="hrp-input-content">
+                                            <div class="hrp-radio-group">
+                                                <label class="hrp-radio">
+                                                    <input type="radio" name="gender" value="male">
+                                                    <span class="radio"></span>Male
+                                                </label>
+                                                <label class="hrp-radio">
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span class="radio"></span>Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hrp-form-item">
+                                        <label class="hrp-label">Hobby</label>
+                                        <div class="hrp-input-content">
+                                            <div class="hrp-checkbox-group">
+                                                <label class="hrp-checkbox">
+                                                    <input type="checkbox" name="hobby" value="eat">
+                                                    <span class="checkbox"></span>Eat
+                                                </label>
+                                                <label class="hrp-checkbox">
+                                                    <input type="checkbox" name="hobby" value="sleep">
+                                                    <span class="checkbox"></span>Sleep
+                                                </label>
+                                                <label class="hrp-checkbox">
+                                                    <input type="checkbox" name="hobby" value="run">
+                                                    <span class="checkbox"></span>Run
+                                                </label>
+                                                <label class="hrp-checkbox">
+                                                    <input type="checkbox" name="hobby" value="movie">
+                                                    <span class="checkbox"></span>Movie
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hrp-form-item">
+                                        <label class="hrp-label">Desc</label>
+                                        <div class="hrp-input-content">
+                                            <textarea class="hrp-input" rows="2" placeholder="Enter something..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hrp-drawer-footer">
+                                <button class="hrp-btn hrp-btn-default drawer-close">Cancel</button>
+                                <button class="hrp-btn hrp-btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code class="g">"showDrawer(<code class="o">'#createdrawer', 'create'</code>)"</code>><code
+                            class="d">Create Drawer 演示</code>&lt;/button&gt;<br>
+                        &lt;div <code class="b">id</code>=<code class="r">"createdrawer"</code> <code class="b">class</code>=<code
+                            class="r">"hrp-drawer"</code> <code class="b">style</code>=<code class="r">"width: 500px;"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-drawer-content"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-drawer-head"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-drawer-title"</code>&gt;<code class="d">Create Drawer</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-drawer-body"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-form hrp-form-right"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; ...<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code class="r">"hrp-drawer-footer"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-default drawer-close"</code>&gt;<code class="d">Cancel</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;button <code class="b">class</code>=<code
+                            class="r">"hrp-btn hrp-btn-primary"</code>&gt;<code class="d">Submit</code>&lt;/button&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &nbsp;&nbsp; &lt;/div&gt;<br>
+                        &lt;/div&gt;<br>
+                    </samp>
+                </div>
+
+
+                <!-- tree -->
+                <h1 id="tree">树 <small>Tree</small> </h1>
+                <p>树控件可以完整展现层级关系，并具有展开收起选择等交互功能。</p>
+                <p>调用方法<code class="g">setTree(<code class="o">"#id"</code>,<code class="r">[列表]</code>,<code class="r">[名称|默认‘name’]</code>)</code>可以自动生成树形结构。</p>
+                <p>调用方法<code class="g">getTreeNode(<code class="o">'.hrp-tree-title'</code>,<code
+                        class="r">key</code>)</code>获取所有末级节点，<code
+                        class="r">key</code>为需要获取的键值，如果不设置则默认返回整个对象；该方法可以配合<code class="g">click</code>方法使用，获取选中的末级节点。
+                </p>
+                <script type="text/javascript">
+                    $(function () {
+                        let list = [
+                            {
+                                name: 'leaf 1', value: 'l1', children: [
+                                    {
+                                        name: 'leaf 1-1', value: 'l11', children: [
+                                            { name: 'leaf 1-1-1', value: 'l111', children: [] },
+                                            { name: 'leaf 1-1-2', value: 'l112', children: [] },
+                                            { name: 'leaf 1-1-3', value: 'l113', children: [] }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'leaf 2', value: 'l2', children: [
+                                    { name: 'leaf 2-1', value: 'l21', children: [] }
+                                ]
+                            },
+                            { name: 'leaf 3', value: 'l3', children: [] }
+                        ]
+                        setTree('#treeExample', list)
+                        $('body').on('click', '#treeExample .hrp-tree-title', function () {
+                            let node = getTreeNode(this, 'value')
+                            if (node) {
+                                alert(JSON.stringify(node))
+                            }
+                        })
+                        setTree('#treeCheck', list)
+                        setTreeCheckedNode('#treeCheck', ['l111', 'l112'], 'value')
+                        setTreeOpenedNode('#treeCheck', ['l2'], 'value')
+                    })
+                </script>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8">
+                            <div class="hrp-tree" id="treeExample"></div>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-tree"</code> <code
+                            class="b">id</code>=<code class="r">"treeExample"</code>&gt;<br>
+                        <pre>&nbsp;&lt;!-- 调用 setTree() 方法后，将自动生成下面的树 --&gt;</pre>
+                        &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<code
+                            class="r">"hrp-tree-children"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-tree-subtree"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-tree-title"</code>&gt;<code class="d">TreeTitle 1</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;ul <code class="b">class</code>=<code
+                            class="r">"hrp-tree-children"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; ...<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;li <code class="b">class</code>=<code
+                            class="r">"hrp-tree-subtree"</code>&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &lt;div <code class="b">class</code>=<code
+                            class="r">"hrp-tree-title"</code>&gt;<code class="d">TreeTitle 2</code>&lt;/div&gt;<br>
+                        &nbsp;&nbsp; &nbsp;&nbsp; &lt;/li&gt;<br>
+                        &nbsp;&nbsp; &lt;/ul&gt;<br>
+                        <pre>&nbsp;&lt;!-- 调用 setTree() 方法后，将自动生成上面的树 --&gt;</pre>
+                        &lt;/div&gt;<br>
+                        <br>
+                        <code class="g">setTree(<code class="o">'#treeExample'</code>, list)</code><br>
+                        $(<code class="o">'body'</code>).on('click', <code class="o">'#treeExample .hrp-tree-title'</code>, <code
+                            class="b">function</code>(){<br>
+                        &nbsp;&nbsp; alert(<code class="g">getTreeNode</code>(<code class="b">this</code>,<code
+                            class="o">'value'</code>))<br>
+                        })<br>
+                    </samp>
+                </div>
+                <p>对于可多选的树，可以使用<code class="g">getTreeCheckedList(<code class="o">'#id'</code>,<code
+                        class="r">key</code>)</code>方法获取选中的节点，<code class="r">key</code>为需要获取的键值，如果不设置则默认返回整个对象。</p>
+                <p>调用方法<code class="g">setTreeCheckedNode(<code class="o">'#id'</code>,<code class="r">list</code>,<code
+                        class="r">key</code>)</code>设置默认选中的节点，<code class="r">list</code>为选中节点的值，<code
+                        class="r">key</code>为节点数据中的一个字段名。</p>
+                <p>调用方法<code class="g">setTreeOpenedNode(<code class="o">'#id'</code>,<code class="r">list</code>,<code
+                        class="r">key</code>)</code>设置默认展开的节点，<code class="r">list</code>为展开节点的值，<code
+                        class="r">key</code>为节点数据中的一个字段名。</p>
+                <div class="sample">
+                    <div class="hrp-row">
+                        <div class="hrp-col hrp-col-8">
+                            <div class="hrp-tree show-checkbox" id="treeCheck"></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <button type="button" class="hrp-btn hrp-btn-primary" id="tree-node"
+                            onclick="alert(JSON.stringify(getTreeCheckedList('#treeCheck')))">获取选中的对象</button>
+                        <button type="button" class="hrp-btn hrp-btn-primary" id="tree-key"
+                            onclick="alert(JSON.stringify(getTreeCheckedList('#treeCheck','value')))">获取选中的值</button>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">class</code>=<code class="r">"hrp-tree show-checkbox"</code> <code
+                            class="b">id</code>=<code class="r">"treeCheck"</code>&gt;&lt;/div&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-primary"</code> <code
+                            class="b">id</code>=<code class="r">"tree-node"</code> <code class="b">onclick</code>=<code
+                            class="g">"alert(getTreeCheckedList(<code class="o">'#treeCheck'</code>))"</code>&gt;<code
+                            class="d">获取选中的对象</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-primary"</code> <code
+                            class="b">id</code>=<code class="r">"tree-key"</code> <code class="b">onclick</code>=<code
+                            class="g">"alert(getTreeCheckedList(<code class="o">'#treeCheck'</code>,<code
+                            class="o">'value'</code>))"</code>&gt;<code class="d">获取选中的值</code>&lt;/button&gt;<br>
+                        <br>
+                        <code class="g">setTreeCheckedNode(<code class="o">'#treeCheck'</code>,<code
+                            class="g">['l111','l112']</code>,<code class="o">'value'</code>)</code>
+                        <code class="g">setTreeOpenedNode(<code class="o">'#treeCheck'</code>,<code
+                            class="g">['l2']</code>,<code class="o">'value'</code>)</code>
+                    </samp>
+                </div>
+
+
+                <!-- tooltip -->
+                <h1 id="tooltip">文字提示 <small>Tooltip</small> </h1>
+                <p>文字提示气泡框，在鼠标悬停时显示。</p>
+                <p>需要为元素添加<code class="r">.hrp-tooltip</code>类，<code class="b">data-place</code>属性用于指向气泡的位置，<code class="b">data-tip</code>属性用于指向气泡里的内容。</p>
+                <div class="sample">
+                    <div class="itop">
+                        <div class="flex-center">
+                            <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="top-start"
+                                data-tip="Top Start 文字提示">上左</button>
+                            <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="top"
+                                data-tip="Top Center 文字提示">上边</button>
+                            <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="top-end"
+                                data-tip="Top End 文字提示">上右</button>
+                        </div>
+                    </div>
+                    <div class="icenter">
+                        <div class="flex-between">
+                            <div class="flex-wrap">
+                                <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma"
+                                    data-place="left-start" data-tip="Left Start 文字提示">左上</button>
+                                <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="left"
+                                    data-tip="Left Center 文字提示">左边</button>
+                                <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma"
+                                    data-place="left-end" data-tip="Left End 文字提示">左下</button>
+                            </div>
+                            <div class="flex-wrap">
+                                <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma"
+                                    data-place="right-start" data-tip="Right Start 文字提示">右上</button>
+                                <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="right"
+                                    data-tip="Right Center 文字提示">右边</button>
+                                <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma"
+                                    data-place="right-end" data-tip="Right End 文字提示">右下</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibottom">
+                        <div class="flex-center">
+                            <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma"
+                                data-place="bottom-start" data-tip="Bottom Start 文字提示">下左</button>
+                            <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="bottom"
+                                data-tip="Bottom Center 文字提示">下边</button>
+                            <button type="button" class="hrp-btn hrp-btn-default hrp-tooltip ma" data-place="bottom-end"
+                                data-tip="Bottom End 文字提示">下右</button>
+                        </div>
+                    </div>
+                    <samp>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"top-start"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Top Start 文字提示"</code>&gt;<code class="d">
+                                            上左</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"top"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Top Center 文字提示"</code>&gt;<code class="d">
+                                            上边</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"top-end"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Top End 文字提示"</code>&gt;<code class="d">
+                                            上右</code>&lt;/button&gt;<br><br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"left-start"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Left Start 文字提示"</code>&gt;<code class="d">
+                                            左上</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"left"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Left Center 文字提示"</code>&gt;<code class="d">
+                                            左边</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"left-end"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Left End 文字提示"</code>&gt;<code class="d">
+                                            左下</code>&lt;/button&gt;<br><br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"right-start"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Right Start 文字提示"</code>&gt;<code class="d">
+                                            右上</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"right"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Right Center 文字提示"</code>&gt;<code class="d">
+                                            右边</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"right-end"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Right End 文字提示"</code>&gt;<code class="d">
+                                            右下</code>&lt;/button&gt;<br><br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"bottom-start"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Bottom Start 文字提示"</code>&gt;<code class="d">
+                                            下左</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"bottom"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Bottom Center 文字提示"</code>&gt;<code class="d">
+                                            下边</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">type</code>=<code class="r">"button"</code> <code
+                            class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default hrp-tooltip"</code> <code
+                            class="b">data-place</code>=<code class="r">"bottom-end"</code> <code
+                            class="b">data-tip</code>=<code class="r">"Bottom End 文字提示"</code>&gt;<code class="d">
+                                            下右</code>&lt;/button&gt;
+                    </samp>
+                </div>
+
+
+                <!-- scrollbar -->
+                <h1 id="scrollbar">滚动条 <small>Scrollbar</small> </h1>
+                <p>滚动条默认隐藏纵向，只显示横向，如果需要纵向拉动，可以为元素添加<code class="r">.hrp-scroll</code>类，创建自定义的纵向滚动条。</p>
+                <div class="sample">
+                    <table class="hrp-table fixed hrp-resizable" data-table="#table-scroll">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="28%">
+                            <col width="30%">
+                            <col width="40%">
+                            <col width="25%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>E-mail</th>
+                                <th>Wage</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 200px;">
+                        <table class="hrp-table fixed hrp-scroll">
+                            <colgroup>
+                                <col width="50px">
+                                <col width="28%">
+                                <col width="30%">
+                                <col width="40%">
+                                <col width="25%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Lilei</td>
+                                    <td>00-238478293</td>
+                                    <td>kmills8@loc.gov</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Hanmeimei</td>
+                                    <td>01-328469821</td>
+                                    <td>acunningham4@blogs.com</td>
+                                    <td>8000</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>Wangxiaoer</td>
+                                    <td>20-238462838</td>
+                                    <td>ssimpson3@pagesperso.org</td>
+                                    <td>50000000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Lilei</td>
+                                    <td>00-238478293</td>
+                                    <td>kmills8@loc.gov</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Hanmeimei</td>
+                                    <td>01-328469821</td>
+                                    <td>acunningham4@blogs.com</td>
+                                    <td>8000</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>Wangxiaoer</td>
+                                    <td>20-238462838</td>
+                                    <td>ssimpson3@pagesperso.org</td>
+                                    <td>50000000</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Lilei</td>
+                                    <td>00-238478293</td>
+                                    <td>kmills8@loc.gov</td>
+                                    <td>5000</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>Hanmeimei</td>
+                                    <td>01-328469821</td>
+                                    <td>acunningham4@blogs.com</td>
+                                    <td>8000</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>Wangxiaoer</td>
+                                    <td>20-238462838</td>
+                                    <td>ssimpson3@pagesperso.org</td>
+                                    <td>50000000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <samp>
+                        &lt;div <code class="b">style</code>=<code class="r">"height: 200px;"</code>&gt;<br>
+                        &nbsp;&nbsp; &lt;table <code class="b">class</code>=<code class="r">"hrp-scroll"</code>&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp; <code class="d">...</code><br>
+                        &nbsp;&nbsp; &lt;/table&gt;<br>
+                        &lt;/div&gt;
+                    </samp>
+                </div>
+
+                <!-- mask -->
+                <h1 id="mask">遮罩层 <small>Mask</small> </h1>
+                <p>打开模态组件，或需要锁定页面时使用遮罩层。</p>
+                <p>调用方法<code class="g">openMask(<code class="r">layer</code>,<code class="r">color</code>,<code class="r">type</code>)</code>可以打开自定义遮罩：</p>
+                <p><code class="r">layer</code>代表遮罩层的海拔，默认为 500；</p>
+                <p><code class="r">color</code>代表遮罩层的颜色，默认为 60% 的黑色；</p>
+                <p><code class="r">type</code>代表遮罩层是否可以点击关闭，默认为 false；</p>
+                <div class="sample">
+                    <button class="hrp-btn hrp-btn-default" onclick="openMask('', '', 'true')">默认遮罩</button>
+                    <button class="hrp-btn hrp-btn-default" onclick="openMask('2021', 'rgba(255,255,255,.6)', 'true')">自定义遮罩</button>
+                    <samp>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code class="g">"openMask(<coe class="o">''</coe>,<code class="o">''</code>,<code
+                            class="o">'true'</code>)"</code>&gt;<code class="d">默认遮罩</code>&lt;/button&gt;<br>
+                        &lt;button <code class="b">class</code>=<code class="r">"hrp-btn hrp-btn-default"</code> <code
+                            class="b">onclick</code>=<code
+                            class="g">"openMask(<coe class="o">'2021'</coe>,<code class="o">'rgba(255,255,255,.6)'</code>,<code
+                            class="o">'true'</code>)"</code>&gt;<code class="d">自定义遮罩</code>&lt;/button&gt;
+                    </samp>
+                </div>
+                <p>调用方法<code class="g">closeMask()</code>关闭遮罩。</p>
+
+
+                <div class="over" style="margin-top: 160px;"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
